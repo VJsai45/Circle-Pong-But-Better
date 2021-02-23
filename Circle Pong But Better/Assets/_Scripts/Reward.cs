@@ -37,15 +37,15 @@ public class Reward : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (AdManager.instance.IsRewardedAdLoaded())
-        {
-            AdManager.instance.ShowRewardedAd();
-            //HomeController.instance.GetComponent<Animator>().SetBool("replayGame",true);
-        }
-        else
-        {
+        //if (AdManager.instance.IsRewardedAdLoaded())
+        //{
+        //    AdManager.instance.ShowRewardedAd();
+        //    not included//HomeController.instance.GetComponent<Animator>().SetBool("replayGame",true);
+        //}
+        //else
+        //{
             StartCoroutine(HomeController.instance.replayScreenOpenCLose(false));
-        }
+        //}
 
             
     }

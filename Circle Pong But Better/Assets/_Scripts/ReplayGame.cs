@@ -20,17 +20,17 @@ public class ReplayGame : MonoBehaviour
     void OnMouseDown()
     {
         counter++;
-        var adLoaded = AdManager.instance.IsInterstitialLoaded();
-        if (counter == 3 && adLoaded)
-        {
-            AdManager.instance.isReplay = true;
-            AdManager.instance.ShowInterstitialAd();
-            counter = 0;
-        }
-        else
-        {
+        //var adLoaded = AdManager.instance.IsInterstitialLoaded();
+        //if (counter == 3 && adLoaded)
+        //{
+        //    AdManager.instance.isReplay = true;
+        //    AdManager.instance.ShowInterstitialAd();
+        //    counter = 0;
+        //}
+        //else
+        //{
             StartCoroutine(HomeController.instance.continueAfterReplay());
-        }
+        //}
         
         
         
