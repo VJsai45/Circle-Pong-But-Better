@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using GoogleMobileAds.Api;
-//using GoogleMobileAds.Placement;
+using GoogleMobileAds.Api;
+using GoogleMobileAds.Placement;
 
 public class missOutReward : MonoBehaviour
 {
@@ -25,17 +25,17 @@ public class missOutReward : MonoBehaviour
     void OnMouseDown()
     {
         counter++;
-        //var adLoaded = AdManager.instance.IsInterstitialLoaded();
-        //if (counter == 2 && adLoaded)
-        //{
-        //    AdManager.instance.isHome = true;
-        //    AdManager.instance.ShowInterstitialAd();
-        //    counter = 0;
-        //}
-        //else
-        //{
+        var adLoaded = AdManager.instance.IsInterstitialLoaded();
+        if (counter == 2 && adLoaded)
+        {
+            AdManager.instance.isHome = true;
+            AdManager.instance.ShowInterstitialAd();
+            counter = 0;
+        }
+        else
+        {
             GoToHome();
-        //}
+        }
 
     }
 

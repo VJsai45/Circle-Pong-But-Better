@@ -273,7 +273,7 @@ public class ThemeShopController : MonoBehaviour
             cardsParent.transform.rotation = initialCardRotaion;
             cards[counter].SetActive(false);
             //gameObject.SetActive(false);
-           // AdManager.instance.ShowBannerAd();
+            AdManager.instance.ShowBannerAd();
             isClosing = false;
             isThemeShopOpen = false;
         }

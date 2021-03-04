@@ -29,7 +29,7 @@ public class ThemeShopIcon : MonoBehaviour
             notification.GetComponentInChildren<TextMeshPro>().text = 0.ToString();
             notification.SetActive(false);
             isOpening = true;
-           // AdManager.instance.HideBannerAd();
+            AdManager.instance.HideBannerAd();
             var dest = Vector3.zero;
             var homeDest = new Vector3(-8, 0, 0);
             var tsc = themeshop.GetComponent<ThemeShopController>();

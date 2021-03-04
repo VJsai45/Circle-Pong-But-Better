@@ -52,7 +52,7 @@ public class PlayButton : MonoBehaviour
 
     IEnumerator openSharePrompt()
     {
-        //AdManager.instance.HideBannerAd();
+        AdManager.instance.HideBannerAd();
         shareScreen.SetActive(true);
         shareScreen.GetComponentsInChildren<TextMeshPro>()[0].text = shareTexts[Random.Range(0, 2)];
         shareScreen.GetComponentsInChildren<TextMeshPro>()[1].color = Color.white;
@@ -68,7 +68,7 @@ public class PlayButton : MonoBehaviour
 
     IEnumerator openRatePrompt()
     {
-       // AdManager.instance.HideBannerAd();
+        AdManager.instance.HideBannerAd();
         rateScreen.SetActive(true);
         rateScreen.GetComponentsInChildren<TextMeshPro>()[0].text = rateTexts[Random.Range(0, 3)];
         rateScreen.GetComponentsInChildren<TextMeshPro>()[1].color = Color.white;

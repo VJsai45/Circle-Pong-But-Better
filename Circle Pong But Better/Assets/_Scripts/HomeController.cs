@@ -11,7 +11,7 @@ public class HomeController : MonoBehaviour
         rightScreenTutorial,leftScreenTutorial,tutorialScreen,themeOnePrompt,themeTwoPrompt;
     public Vector3 platformPositon;
     public Quaternion platformRotation;
-    //AdManager adManager;
+    AdManager adManager;
     private bool isRewardEarned,isContinued;
     public bool isGameOn;
     public int level = 0;
@@ -35,7 +35,7 @@ public class HomeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //adManager = FindObjectOfType<AdManager>();
+        adManager = FindObjectOfType<AdManager>();
         int scoreValue = checkAndSetHighscore();
         highScore.GetComponent<TextMeshPro>().text =  "Highscore : "+scoreValue.ToString();
         platformPositon = platform.transform.position;
@@ -66,7 +66,7 @@ public class HomeController : MonoBehaviour
     {
         if (isPlayPressed)
         {
-            //adManager.HideBannerAd();
+            adManager.HideBannerAd();
             GameScreen.SetActive(true);
             setGameMode();
             animationHandler.GetComponent<Animator>().SetBool("isPlayButtonPressed", true);
@@ -86,7 +86,7 @@ public class HomeController : MonoBehaviour
             animationHandler.GetComponent<Animator>().SetBool("isBackButtonPressed", false); 
             setHomeScreenComponents();
             //Debug.Log("not play but");
-            //adManager.ShowBannerAd();
+            adManager.ShowBannerAd();
 
         }
     }
@@ -257,7 +257,7 @@ public class HomeController : MonoBehaviour
             //platform.GetComponent<PlatformControl>().isGameOn = false;
             pause.GetComponent<BoxCollider2D>().enabled = false;
             isGameOn = false;
-            //adManager.GetComponent<AdManager>().HideBannerAd();
+            adManager.GetComponent<AdManager>().HideBannerAd();
             replayScreen.SetActive(true);
             string replayText = "";
 
@@ -629,7 +629,7 @@ public class HomeController : MonoBehaviour
 
     public void rewardClosed()
     {
-        //adManager.LoadRewardedAd();
+        adManager.LoadRewardedAd();
         if (isRewardEarned)
         {
             StartCoroutine(continueAnimation());
